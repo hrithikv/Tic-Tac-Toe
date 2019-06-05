@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    int activePlayer=0;
+    int playerToken=0;
     int[] points_scored ={2,2,2,2,2,2,2,2,2};
     int[][] target_pts={{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
     boolean beingPlayed=true;
@@ -30,17 +30,17 @@ public class MainActivity extends AppCompatActivity {
             if (points_scored[tappedCount] == 2) {
                 new_view.setTranslationY(-1000f);
 
-                if (activePlayer == 0) {
+                if (playerToken == 0) {
                     new_view.setImageResource(R.drawable.dog);
                     turn.setText("Cat's Turn");
-                    activePlayer = 1;
+                    playerToken = 1;
                 } else {
                     new_view.setImageResource(R.drawable.cat);
                     turn.setText("Dog's Turn");
-                    activePlayer = 0;
+                    playerToken = 0;
                 }
                 new_view.animate().translationYBy(1000f).rotation(n).setDuration(300);
-                points_scored[tappedCount] = activePlayer;
+                points_scored[tappedCount] = playerToken;
 
                 for (int[] position_fnd : target_pts) {
                     if (points_scored[position_fnd[0]] == points_scored[position_fnd[1]] &&
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         beingPlayed=true;
         LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLay);
         layout.setVisibility(View.INVISIBLE);
-        activePlayer = 0;
+        playerToken = 0;
         for (int i = 0; i < points_scored.length; i++) {
             points_scored[i] = 2;
         }
