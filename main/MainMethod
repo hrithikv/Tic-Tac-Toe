@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     int[][] target_pts={{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
     boolean beingPlayed=true;
 
-    public void startGame(View view){
+    public void startGame(View pointer){
         if(beingPlayed==true) {
             TextView turn=(TextView)findViewById(R.id.playTurn);
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             int n = numb.nextInt(100);
             n = n + 10;
 
-            ImageView new_view = (ImageView) view;
+            ImageView new_view = (ImageView) pointer;
 
             int tappedCount = Integer.parseInt(new_view.getTag().toString());
             if (points_scored[tappedCount] == 2) {
