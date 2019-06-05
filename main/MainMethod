@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void playAgain(View view) {
+    public void nextAttempt(View view) {
         beingPlayed=true;
         LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLay);
         layout.setVisibility(View.INVISIBLE);
