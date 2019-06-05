@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
                         if (points_scored[position_fnd[0]] == 0) {
                             winner = "Cat";
                         }
-                        TextView winnerMessage = (TextView) findViewById(R.id.winMessage);
-                        winnerMessage.setText(winner + " has won!");
+                        TextView output_msgg = (TextView) findViewById(R.id.winMessage);
+                        output_msgg.setText(winner + " has won!");
                         LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLay);
                         layout.bringToFront();
                         layout.setVisibility(View.VISIBLE);
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                         if (gameOver){
                             turn.setText(" ");
                             String winner = "Dog";
-                            TextView winnerMessage = (TextView) findViewById(R.id.winMessage);
-                            winnerMessage.setText("Draw");
+                            TextView output_msgg = (TextView) findViewById(R.id.winMessage);
+                            output_msgg.setText("Draw");
                             LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLay);
                             layout.bringToFront();
                             layout.setVisibility(View.VISIBLE);
