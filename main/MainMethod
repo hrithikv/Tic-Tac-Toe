@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
     int activePlayer=0;
     int[] points_scored ={2,2,2,2,2,2,2,2,2};
     int[][] target_pts={{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
-    boolean activeGame=true;
+    boolean beingPlayed=true;
 
     public void dropIn(View view){
-        if(activeGame==true) {
+        if(beingPlayed==true) {
             TextView turn=(TextView)findViewById(R.id.playTurn);
 
             Random numb = new Random();
@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
                         LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLay);
                         layout.bringToFront();
                         layout.setVisibility(View.VISIBLE);
-                        activeGame=false;
+                        beingPlayed=false;
                     }
-                    else if(activeGame){
+                    else if(beingPlayed){
                         boolean gameOver=true;
                         for(int countState:points_scored){
                             if(countState==2){
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                             LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLay);
                             layout.bringToFront();
                             layout.setVisibility(View.VISIBLE);
-                            activeGame=false;
+                            beingPlayed=false;
                         }
                     }
                 }
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void playAgain(View view) {
-        activeGame=true;
+        beingPlayed=true;
         LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLay);
         layout.setVisibility(View.INVISIBLE);
         activePlayer = 0;
